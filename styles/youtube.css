@@ -1,0 +1,287 @@
+/*general style*/
+body {
+  font-family: Roboto, Arial;
+  margin: 0;
+  padding-top: 80px;
+  padding-left: 96px;
+  padding-right: 24px;
+  background-color: rgb(250, 250, 250);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+/*header style*/
+.header {
+display: flex;
+flex-direction: row;
+height: 55px;
+justify-content: space-between;
+align-items: center;
+background-color: white;
+
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 100;
+
+border-bottom: 1px solid rgb(220, 220,  220);
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  height: 24px;
+  margin-right: 24px;
+  margin-left: 24px;
+}
+
+.youtube-logo {
+  height: 20px;
+}
+
+.middle-header {
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  flex: 1;
+  height: 36px;
+  border: 1px solid rgb(192, 192 ,192);
+  border-radius: 2px;
+  padding-left: 15px;
+  font-size: 16px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  width: 0;
+}
+
+.search-bar::placeholder {
+  font-size: 16px;
+}
+
+.search-button {
+height: 40px;
+width: 60px;
+background-color: rgb(245, 245, 245);
+border: 1px solid rgb(192, 192, 192);
+margin-left: -1px;
+margin-right: 10px;
+}
+
+.search-icon {
+  height: 24px;
+}
+
+.voice-search-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: rgb(245, 245, 245);
+  border: none;
+}
+
+.voice-search-icon {
+  position: relative;
+  height: 24px;
+}
+
+.search-button,
+.voice-search-button,
+.upload-icon-container,
+.youtube-apps-container,
+.notif-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -40px;
+  background-color: grey;
+  color: white;
+  font-size: 12px;
+  padding: 8px 4px;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-container:hover .tooltip,
+.notif-container:hover .tooltip {
+  opacity: 1;
+}
+
+.right-header {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.upload-icon {
+  height: 24px;
+}
+
+.youtube-apps-icon {
+  height: 24px;
+}
+
+.notifications-icon {
+  height: 24px;
+}
+
+.notif-counts {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background-color: rgb(200, 0, 0);
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 10px;
+}
+
+.user-icon {
+  height: 32px;
+  border-radius: 16px;
+}
+
+.hamburger-menu:hover,
+.youtube-logo:hover,
+.search-button:hover,
+.voice-search-button:hover,
+.upload-icon:hover,
+.youtube-apps-icon:hover,
+.notifications-icon:hover,
+.user-icon:hover {
+  cursor: pointer;
+}
+
+
+/*sidebar style*/
+.sidebar {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  z-index: 200;
+  background-color: white;
+  width: 72px;
+}
+
+.sidebar-link{
+  height: 74px;
+  display:flex ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-link:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.sidebar-link img {
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+.sidebar-link div {
+  font-size: 10px;
+}
+
+
+
+/*content style*/
+.utube-video-grid {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+@media (max-width: 870px) {
+  .utube-video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 871px) and (max-width: 1199px){
+  .utube-video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .utube-video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.video-preview {
+  position: relative;
+}
+
+.thumbnails {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.video-time {
+  background-color: black;
+  color: white;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.profile-picture {
+  width: 80%;
+  border-radius: 50px;
+}
+
+.video-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.video-author, .video-stats {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+
+.video-author {
+  margin-bottom: 4px;
+}
